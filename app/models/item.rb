@@ -12,4 +12,6 @@ class Item < ApplicationRecord
   validates :item_condition_id, numericality: { other_than: 1 }
   validates :postage_type_id, numericality: { other_than: 1 }
   validates :preparation_day_id, numericality: { other_than: 1 }
+
+  belongs_to :user
 end
