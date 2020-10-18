@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-10-18T07:24:47.422Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="uFvUgXVm8vGKg1bMzUDg" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-10-18T07:33:20.898Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="xIQ0PDDT2b_x6catHiez" version="13.6.5">
     <diagram id="KC50vUDSMEote1UL7VRu" name="Page-1">
-        <mxGraphModel dx="562" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#F4F1DE" math="0" shadow="0">
+        <mxGraphModel dx="1208" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#F4F1DE" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -25,13 +25,13 @@
                 <mxCell id="214" value="items" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" parent="257" vertex="1">
                     <mxGeometry y="46" width="300" height="300" as="geometry"/>
                 </mxCell>
-                <mxCell id="215" value="has_many :comments&#10;belongs_to :user&#10;has_one :deal&#10;belongs_to_active_hash :category&#10;belongs_to_active_hash :item_condition&#10;belongs_to_active_hash :postage_type&#10;belongs_to_active_hash :preparation_day" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#393C56;" parent="214" vertex="1">
+                <mxCell id="215" value="has_many :comments&#10;belongs_to :user&#10;has_one :deal&#10;belongs_to_active_hash :category&#10;belongs_to_active_hash :item_condition&#10;belongs_to_active_hash :postage_type&#10;belongs_to_active_hash :preparation_day&#10;belongs_to_active_hash :prefecture" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#393C56;" parent="214" vertex="1">
                     <mxGeometry y="26" width="300" height="124" as="geometry"/>
                 </mxCell>
                 <mxCell id="216" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=#F4F1DE;" parent="214" vertex="1">
                     <mxGeometry y="150" width="300" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="217" value="name&#10;description&#10;price&#10;item_condition_id&#10;postage_type_id&#10;prefecture_code&#10;preparation_day_id&#10;category_id&#10;user_id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#393C56;" parent="214" vertex="1">
+                <mxCell id="217" value="name&#10;description&#10;price&#10;item_condition_id&#10;postage_type_id&#10;prefecture&#10;preparation_day_id&#10;category_id&#10;user_id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#393C56;" parent="214" vertex="1">
                     <mxGeometry y="158" width="300" height="142" as="geometry"/>
                 </mxCell>
                 <mxCell id="256" value="" style="group;fontColor=#393C56;" parent="257" vertex="1" connectable="0">
@@ -139,7 +139,7 @@
                 <mxCell id="224" value="Sending_destinations" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" parent="1" vertex="1">
                     <mxGeometry x="450" y="50" width="200" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="225" value="belongs_to :deal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#393C56;" parent="224" vertex="1">
+                <mxCell id="225" value="belongs_to :deal&#10;belongs_to_active_hash :prefecture" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#393C56;" parent="224" vertex="1">
                     <mxGeometry y="26" width="200" height="34" as="geometry"/>
                 </mxCell>
                 <mxCell id="226" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#E07A5F;fontColor=#393C56;labelBackgroundColor=#F4F1DE;" parent="224" vertex="1">

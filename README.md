@@ -18,6 +18,7 @@
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :postage_type
 - belongs_to_active_hash :preparation_day
+- belongs_to_active_hash :prefecure
 
 
 
@@ -63,7 +64,7 @@
 | deal            | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :deal
-
+- belongs_to_active_hash :prefecture
 
 
 ## dealsテーブル
