@@ -1,17 +1,14 @@
 ## itemsテーブル
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
-| image             | string     | null: false                    |
 | name              | string     | null: false                    |
 | description       | text       | null: false                    |
 | price             | integer    | null: false                    |
-| item_condition_id | references | null: false, foreign_key: true |
-| postage_type      | references | null: false, foreign_key: true |
+| item_condition_id | integer | null: false |
+| postage_type      | integer | null: false |
 | prefecture_code   | integer    | null: false                    |
-| preparation_day   | references | null: false, foreign_key:true  |
-| category_id       | references | null: false, foreign_key: true |
-| seller_id         | references | null: false, foreign_key: true |
-| buyer_id          | references | foreign_key: true              |
+| preparation_day   | integer | null: false |
+| category_id       | integer | null: false |
 ### Association
 - has_many :comments
 - belongs_to :category
@@ -49,16 +46,14 @@
 
 
 ## profilesテーブル
-| Column           | Type       | Options     |
-| ---------------- | ---------- | ----------- |
-| family_name      | string     | null: false |
-| first_name       | string     | null: false |
-| family_name_kana | string     | null: false |
-| first_name_kana  | string     | null: false |
-| birth_year       | date       | null:false  |
-| birth_month      | date       | null: false |
-| birth_day        | date       | null: false |
-| user_id          | references | null: false, foreign_key: true            |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| family_name      | string     | null: false                    |
+| first_name       | string     | null: false                    |
+| family_name_kana | string     | null: false                    |
+| first_name_kana  | string     | null: false                    |
+| birthday         | date       | null:false                     |
+| user_id          | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
 
@@ -71,28 +66,26 @@
 | destination_first_name       | string     | null: false                    |
 | destination_family_name_kana | string     | null: false                    |
 | destination_first_name_kana  | string     | null: false                    |
-| zip_code                     | integer    | null: false                    |
+| zip_code                     | string    | null: false                    |
 | prefecture                   | string     | null: false                    |
 | city                         | string     | null: false                    |
 | address                      | string     | null: false                    |
 | building_number              | string     |                                |
-| phone_number                 | integer    | null: false, unique: true      |
+| phone_number                 | string    | null: false, unique: true      |
 | user_id                      | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
 
 
 
-## credit_cardsテーブル
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| card_number   | integer    | null: false, unique: true      |
-| exp_year      | integer    | null: false                    |
-| exp_month     | integer    | null: false                    |
-| security_code | integer    | null: false                    |
-| user_id       | references | null: false, foreign_key: true |
+## dealテーブル
+| Column  | Type       | Options     |
+| ------- | ---------- | ----------- |
+| user_id | references | null: false |
+| item_id | references | null: false |
 ### Association
 - belongs_to :user
+- belongs_to :item
 
 
 
