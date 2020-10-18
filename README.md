@@ -6,7 +6,7 @@
 | price             | integer    | null: false                    |
 | item_condition_id | integer    | null: false                    |
 | postage_type      | integer    | null: false                    |
-| prefecture_code   | integer    | null: false                    |
+| prefecture        | integer    | null: false                    |
 | preparation_day   | integer    | null: false                    |
 | category_id       | integer    | null: false                    |
 | user              | references | null: false, foreign_key: true |
@@ -55,7 +55,7 @@
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | zip_code        | string     | null: false                    |
-| prefecture      | string     | null: false                    |
+| prefecture      | integer    | null: false                    |
 | city            | string     | null: false                    |
 | address         | string     | null: false                    |
 | building_number | string     |                                |
@@ -75,40 +75,3 @@
 - belongs_to :item
 - belongs_to :user
 - has_one :sending_destination
-
-
-
-## categoriesテーブル (active_hash)
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| ancestry | string | null: false |
-### Association
-- has_many :items
-
-
-
-## item_conditionsテーブル (active_hash)
-| Column         | Type   | Options     |
-| -------------- | ------ | ----------- |
-| item_condition | string | null: false |
-### Association
-- has_many :items
-
-
-
-## postage_typesテーブル (active_hash)
-| Column       | Type   | Options     |
-| ------------ | ------ | ----------- |
-| postage_type | string | null: false |
-### Association
-- has_many :items
-
-
-
-## preparation_daysテーブル (active_hash)
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| preparation_day | string | null: false |
-### Association
-- has_many :items
