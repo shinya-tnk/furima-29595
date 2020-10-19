@@ -10,7 +10,6 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
 
-
   validates :category_id, numericality: { other_than: 1 }
   validates :item_condition_id, numericality: { other_than: 1 }
   validates :postage_type_id, numericality: { other_than: 1 }
