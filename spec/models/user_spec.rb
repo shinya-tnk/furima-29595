@@ -73,20 +73,40 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
+      it 'family_nameが空' do
+        @user.family_name = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Family name can't be blank")
+      end
       it 'family_nameが半角' do
         @user.family_name = 'yamada'
         @user.valid?
         expect(@user.errors.full_messages).to include('Family name is invalid')
+      end
+      it 'first_nameが空' do
+        @user.first_name = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name can't be blank")
       end
       it 'first_nameが半角' do
         @user.first_name = 'taro'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name is invalid')
       end
+      it 'family_name_kanaが空' do
+        @user.family_name_kana = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Family name kana can't be blank")
+      end
       it 'family_name_kanaが半角' do
         @user.family_name_kana = 'ﾔﾏﾀﾞ'
         @user.valid?
         expect(@user.errors.full_messages).to include('Family name kana is invalid')
+      end
+      it 'first_name_kanaが空' do
+        @user.first_name_kana = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
       it 'first_name_kanaが半角' do
         @user.first_name_kana = 'ﾀﾛｳ'
