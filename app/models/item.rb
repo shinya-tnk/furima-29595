@@ -1,14 +1,13 @@
 class Item < ApplicationRecord
   with_options presence: true do
-    validates :name
+    validates :name, unless: :was_attached?
     validates :description
-    validates :price
-    validates :category_id, numericality: { other_than: 1}
-    validates :item_condition, numericality: { other_than: 1}
-    validates :postage_type, numericality: { other_than: 1}
-    validates :prefecture, numericality: { other_than: 0}
-    validates :preparation_day, numericality: { other_than: 1}
-
+    validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, format: { with: /^[0-9]+$/ }
+    validates :category_id, numericality: { other_than: 1 }
+    validates :item_condition, numericality: { other_than: 1 }
+    validates :postage_type, numericality: { other_than: 1 }
+    validates :prefecture, numericality: { other_than: 0 }
+    validates :preparation_day, numericality: { other_than: 1 }
   end
 
   belongs_to :user
@@ -20,4 +19,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparation_day
   belongs_to_active_hash :prefecture
 
+  def was_attached?
+    image.attached?
+  end
 end
