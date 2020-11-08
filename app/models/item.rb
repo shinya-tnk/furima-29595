@@ -2,12 +2,12 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name, unless: :was_attached?
     validates :description
-    validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, format: { with: /^[0-9]+$/ }
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, format: { with: /^[0-9]+$/ } }
     validates :category_id, numericality: { other_than: 1 }
-    validates :item_condition, numericality: { other_than: 1 }
-    validates :postage_type, numericality: { other_than: 1 }
-    validates :prefecture, numericality: { other_than: 0 }
-    validates :preparation_day, numericality: { other_than: 1 }
+    validates :item_condition_id, numericality: { other_than: 1 }
+    validates :postage_type_id, numericality: { other_than: 1 }
+    validates :prefecture_id, numericality: { other_than: 0 }
+    validates :preparation_day_id, numericality: { other_than: 1 }
   end
 
   belongs_to :user
