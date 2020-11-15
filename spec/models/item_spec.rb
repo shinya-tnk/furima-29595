@@ -36,7 +36,7 @@ RSpec.describe Item, type: :model do
       it 'カテゴリーのidが1' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("カテゴリーを選択してください")
+        expect(@item.errors.full_messages).to include('カテゴリーを選択してください')
       end
       it '商品の状態の情報がない' do
         @item.item_condition_id = nil
@@ -46,7 +46,7 @@ RSpec.describe Item, type: :model do
       it '商品の状態のidが1' do
         @item.item_condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("商品の状態を選択してください")
+        expect(@item.errors.full_messages).to include('商品の状態を選択してください')
       end
       it '配送料についての情報がない' do
         @item.postage_type_id = nil
@@ -56,7 +56,7 @@ RSpec.describe Item, type: :model do
       it '配送料の負担のidが1' do
         @item.postage_type_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("配送料の負担を選択してください")
+        expect(@item.errors.full_messages).to include('配送料の負担を選択してください')
       end
       it '発送元の地域についての情報がない' do
         @item.prefecture_id = nil
@@ -66,7 +66,7 @@ RSpec.describe Item, type: :model do
       it '発送元の地域のidが1' do
         @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("発送元の地域を選択してください")
+        expect(@item.errors.full_messages).to include('発送元の地域を選択してください')
       end
       it '発送までの日数の情報がない' do
         @item.preparation_day_id = nil
@@ -76,7 +76,7 @@ RSpec.describe Item, type: :model do
       it '発送までの日数のidが1' do
         @item.preparation_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("発送までの日数を選択してください")
+        expect(@item.errors.full_messages).to include('発送までの日数を選択してください')
       end
       it '価格が未入力' do
         @item.price = nil
@@ -91,7 +91,7 @@ RSpec.describe Item, type: :model do
       it '価格が10,000,000円以上' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("価格は9999999以下の値にしてください")
+        expect(@item.errors.full_messages).to include('価格は9999999以下の値にしてください')
       end
       it '販売価格が半角数字でない' do
         @item.price = '６６６'
