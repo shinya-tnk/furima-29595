@@ -1,0 +1,37 @@
+ja:
+  activerecord:
+    models:
+      item: 商品
+    attributes:
+      item:
+        image: 画像
+        name: 商品名
+        description: 商品の説明
+        item_condition_id: 商品の状態
+        postage_type_id: 配送料の負担
+        prefecture_id: 発送元の地域
+        preparation_day_id: 発送までの日数
+        category_id: カテゴリー
+        price: 価格
+    errors:
+      models:
+        item:
+          attributes:
+            image:
+              format: '%{attribute}%{message}'
+              blank: を選択してください
+            category_id:
+              format: '%{attribute}%{message}'
+              other_than: を選択してください
+            item_condition_id:
+              format: '%{attribute}%{message}'
+              other_than: を選択してください
+            postage_type_id:
+              format: '%{attribute}%{message}'
+              other_than: を選択してください
+            prefecture_id:
+              format: '%{attribute}%{message}'
+              other_than: を選択してください
+            preparation_day_id:
+              format: '%{attribute}%{message}'
+              other_than: を選択してください
