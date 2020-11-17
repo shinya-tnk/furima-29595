@@ -8,7 +8,7 @@ class Item < ApplicationRecord
     validates :description
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, format: { with: /^[0-9]+$/ } }
   end
-  with_options presence: true, numericality: { other_than: 1} do
+  with_options presence: true, numericality: { other_than: 1 } do
     validates :category_id
     validates :item_condition_id
     validates :postage_type_id
