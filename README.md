@@ -13,7 +13,7 @@
 ### Association
 - has_many :comments
 - belongs_to :user
-- has_one :deal
+- has_one :order
 - belongs_to_active_hash :category
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :postage_type
@@ -36,7 +36,7 @@
 ### Association
 - has_many :comments
 - has_many :items
-- has_many :deals
+- has_many :orders
 
 
 
@@ -61,13 +61,13 @@
 | address         | string     | null: false                    |
 | building_number | string     |                                |
 | phone_number    | string     | null: false, unique: true      |
-| deal            | references | null: false, foreign_key: true |
+| order           | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :deal
 - belongs_to_active_hash :prefecture
 
 
-## dealsテーブル
+## ordersテーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | item   | references | null: false, foreign_key: true |
