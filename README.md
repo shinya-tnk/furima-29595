@@ -63,7 +63,7 @@
 | phone_number    | string     | null: false, unique: true      |
 | order           | references | null: false, foreign_key: true |
 ### Association
-- belongs_to :deal
+- belongs_to :order
 - belongs_to_active_hash :prefecture
 
 
@@ -75,4 +75,4 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
-- has_one :sending_destination
+- has_one :address
