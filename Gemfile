@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+source 'https://rubygems.org'
 
 ruby '2.6.5'
 
@@ -71,3 +71,7 @@ gem 'gimei'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'rails-i18n'
+
+gem 'payjp'
+
+gem 'pry-rails'
