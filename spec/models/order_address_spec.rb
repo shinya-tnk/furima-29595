@@ -75,7 +75,7 @@ RSpec.describe OrderAddress, type: :model do
       it '電話番号が12桁以上ある' do
         @order_address.phone_number = '080112233445'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("電話番号はハイフンを含まない11桁以内の半角数字で入力してください")
+        expect(@order_address.errors.full_messages).to include('電話番号はハイフンを含まない11桁以内の半角数字で入力してください')
       end
     end
   end
