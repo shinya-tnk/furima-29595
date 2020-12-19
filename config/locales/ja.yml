@@ -67,3 +67,6 @@ ja:
             phone_number:
               format: '%{attribute}%{message}'
               invalid: はハイフンを含まない11桁以内の半角数字で入力してください
+            token:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
