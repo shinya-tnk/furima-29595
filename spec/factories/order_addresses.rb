@@ -4,7 +4,7 @@ FactoryBot.define do
     prefecture_id { 2 }
     city { Faker::Address.city }
     house_number { Faker::Address.street_address }
-    building_name {}
+    building_name { Faker::Address.building_number }
     phone_number { Faker::PhoneNumber.cell_phone.gsub(/-/, '') }
     token { Faker::Lorem.characters }
   end
