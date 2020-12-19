@@ -10,6 +10,11 @@ RSpec.describe OrderAddress, type: :model do
       it 'すべての値が正しく入力されていれば保存される' do
         expect(@order_address).to be_valid
       end
+
+      it '建物名がなくても保存できる' do
+        @order_address.building_name = nil
+        expect(@order_address).to be_valid
+      end
     end
 
     context '購入機能がうまくいかないとき' do
@@ -22,7 +27,7 @@ RSpec.describe OrderAddress, type: :model do
       it '郵便番号がない' do
         @order_address.postal_code = nil
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include('郵便番号を入力してください')
+        expect(@order_address.errors.full_messages).to include('郵便番号が入力されていません。', '郵便番号はハイフンが必要です')
       end
 
       it '郵便番号にハイフンがない' do
@@ -34,7 +39,7 @@ RSpec.describe OrderAddress, type: :model do
       it '都道府県が選択されていない' do
         @order_address.prefecture_id = nil
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include('都道府県を入力してください', '都道府県は数値で入力してください')
+        expect(@order_address.errors.full_messages).to include('都道府県を選択してください')
       end
 
       it '都道府県のidが1' do
@@ -65,6 +70,12 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.phone_number = '０９０ー１１２２ー３３４４'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('電話番号はハイフンを含まない11桁以内の半角数字で入力してください')
+      end
+
+      it '電話番号が12桁以上ある' do
+        @order_address.phone_number = '080112233445'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("電話番号はハイフンを含まない11桁以内の半角数字で入力してください")
       end
     end
   end
