@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :orders
-  
+
   VALID_ZENKAKU_REGEX = /\A[ぁ-んァ-ンー-龥]/.freeze
   VALID_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
   with_options presence: true do
