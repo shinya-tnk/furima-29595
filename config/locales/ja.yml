@@ -62,11 +62,18 @@ ja:
               invalid: はハイフンが必要です
             prefecture_id:
               format: '%{attribute}%{message}'
-              invalid: を選択してください
+              blank: を選択してください
               other_than: を選択してください
+            city:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+            house_number:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
             phone_number:
               format: '%{attribute}%{message}'
               invalid: はハイフンを含まない11桁以内の半角数字で入力してください
+              blank: を入力してください
             token:
               format: '%{attribute}%{message}'
               blank: を入力してください
