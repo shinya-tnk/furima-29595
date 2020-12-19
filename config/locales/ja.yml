@@ -43,6 +43,38 @@ ja:
             preparation_day_id:
               format: '%{attribute}%{message}'
               other_than: を選択してください
+        user:
+          attributes:
+            email:
+              format: '%{attribute}%{message}'
+              blank: を正しく入力してください
+              invalid: を正しく入力してください
+            password:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+              invalid: は6文字以上の半角英数字で入力してください
+            nickname:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+            family_name:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+              invalid: は全角で入力してください
+            first_name:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+              invalid: は全角で入力してください
+            family_name_kana:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+              invalid: は全角カナで入力してください
+            first_name_kana:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+              invalid: は全角カナで入力してください
+            birtyday:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
   activemodel:
     attributes:
       order_address:
