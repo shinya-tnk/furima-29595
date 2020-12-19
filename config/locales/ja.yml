@@ -1,8 +1,16 @@
+---
 ja:
   activerecord:
-    models:
-      item: 商品
     attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        family_name: 性
+        first_name: 名
+        family_name_kana: セイ
+        first_name_kana: メイ
+        birthday: 生年月日
       item:
         image: 画像
         name: 商品名
@@ -35,3 +43,27 @@ ja:
             preparation_day_id:
               format: '%{attribute}%{message}'
               other_than: を選択してください
+  activemodel:
+    attributes:
+      order_address:
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市町村
+        house_number: 番地
+        building_name: 建物名
+        phone_number: 電話番号
+        token: クレジットカード情報
+    errors:
+      models:
+        order_address:
+          attributes:
+            postal_code:
+              format: '%{attribute}%{message}'
+              invalid: はハイフンが必要です
+            prefecture_id:
+              format: '%{attribute}%{message}'
+              invalid: を選択してください
+              other_than: を選択してください
+            phone_number:
+              format: '%{attribute}%{message}'
+              invalid: はハイフンを含まない11桁以内の半角数字で入力してください
