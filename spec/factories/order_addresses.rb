@@ -7,5 +7,7 @@ FactoryBot.define do
     building_name { Faker::Address.building_number }
     phone_number { Faker::PhoneNumber.cell_phone.gsub(/-/, '') }
     token { Faker::Lorem.characters }
+    user_id { 1 }
+    item_id { 1 }
   end
 end

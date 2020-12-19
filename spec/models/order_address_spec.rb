@@ -77,6 +77,18 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('電話番号はハイフンを含まない11桁以内の半角数字で入力してください')
       end
+
+      it 'user_idがない' do
+        @order_address.user_id = nil
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include('Userが入力されていません。')
+      end
+
+      it 'item_idがない' do
+        @order_address.item_id = nil
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include('Itemが入力されていません。')
+      end
     end
   end
 end
