@@ -29,21 +29,35 @@ ja:
             image:
               format: '%{attribute}%{message}'
               blank: を選択してください
+            name:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
+            description:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
             category_id:
               format: '%{attribute}%{message}'
               other_than: を選択してください
+              blank: を選択してください
             item_condition_id:
               format: '%{attribute}%{message}'
+              blank: を選択してください
               other_than: を選択してください
             postage_type_id:
               format: '%{attribute}%{message}'
+              blank: を選択してください
               other_than: を選択してください
             prefecture_id:
               format: '%{attribute}%{message}'
+              blank: を選択してください
               other_than: を選択してください
             preparation_day_id:
               format: '%{attribute}%{message}'
+              blank: を選択してください
               other_than: を選択してください
+            price:
+              format: '%{attribute}%{message}'
+              blank: を入力してください
         user:
           attributes:
             email:
