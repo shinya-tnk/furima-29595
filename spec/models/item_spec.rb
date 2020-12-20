@@ -86,17 +86,17 @@ RSpec.describe Item, type: :model do
       it '価格が299円以下' do
         @item.price = '299'
         @item.valid?
-        expect(@item.errors.full_messages).to include('価格は300以上の値にしてください')
+        expect(@item.errors.full_messages).to include('価格は300円以上に設定してください')
       end
       it '価格が10,000,000円以上' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include('価格は9999999以下の値にしてください')
+        expect(@item.errors.full_messages).to include('価格は9,999,999円以下に設定してください')
       end
       it '販売価格が半角数字でない' do
         @item.price = '６６６'
         @item.valid?
-        expect(@item.errors.full_messages).to include('価格は数値で入力してください')
+        expect(@item.errors.full_messages).to include('価格は半角数字で入力してください')
       end
     end
   end
