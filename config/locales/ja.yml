@@ -60,6 +60,7 @@ ja:
               blank: を入力してください
               greater_than_or_equal_to: は300円以上に設定してください
               less_than_or_equal_to: は9,999,999円以下に設定してください
+              not_a_number: は半角数字で入力してください
         user:
           attributes:
             email:
