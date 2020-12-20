@@ -58,6 +58,8 @@ ja:
             price:
               format: '%{attribute}%{message}'
               blank: を入力してください
+              greater_than_or_equal_to: は300円以上に設定してください
+              less_than_or_equal_to: は9,999,999円以下に設定してください
         user:
           attributes:
             email:
