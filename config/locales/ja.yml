@@ -113,6 +113,7 @@ ja:
             postal_code:
               format: '%{attribute}%{message}'
               invalid: はハイフンが必要です
+              blank: を入力してください
             prefecture_id:
               format: '%{attribute}%{message}'
               blank: を選択してください

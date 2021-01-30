@@ -27,7 +27,7 @@ RSpec.describe OrderAddress, type: :model do
       it '郵便番号がない' do
         @order_address.postal_code = nil
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include('郵便番号が入力されていません。', '郵便番号はハイフンが必要です')
+        expect(@order_address.errors.full_messages).to include('郵便番号を入力してください', '郵便番号はハイフンが必要です')
       end
 
       it '郵便番号にハイフンがない' do
