@@ -37,12 +37,12 @@ RSpec.describe User, type: :model do
       it 'nicknameが空' do
         @user.nickname = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
       it 'emailが空' do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("メールアドレスを正しく入力してください")
+        expect(@user.errors.full_messages).to include('メールアドレスを入力してください')
       end
       it 'emailが重複している' do
         @user.save
@@ -59,7 +59,7 @@ RSpec.describe User, type: :model do
       it 'passwordが空' do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください", "パスワードは6文字以上の半角英数字混合で入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください', 'パスワードは6文字以上の半角英数字混合で入力してください')
       end
       it 'passwordが5文字以下' do
         @user.password = '00000'
@@ -76,7 +76,7 @@ RSpec.describe User, type: :model do
       it 'family_nameが空' do
         @user.family_name = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("性を入力してください")
+        expect(@user.errors.full_messages).to include('性を入力してください')
       end
       it 'family_nameが半角' do
         @user.family_name = 'yamada'
@@ -86,7 +86,7 @@ RSpec.describe User, type: :model do
       it 'first_nameが空' do
         @user.first_name = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("名を入力してください")
+        expect(@user.errors.full_messages).to include('名を入力してください')
       end
       it 'first_nameが半角' do
         @user.first_name = 'taro'
@@ -96,7 +96,7 @@ RSpec.describe User, type: :model do
       it 'family_name_kanaが空' do
         @user.family_name_kana = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("フリガナ（性）を入力してください")
+        expect(@user.errors.full_messages).to include('フリガナ（性）を入力してください')
       end
       it 'family_name_kanaが半角' do
         @user.family_name_kana = 'ﾔﾏﾀﾞ'
@@ -106,7 +106,7 @@ RSpec.describe User, type: :model do
       it 'first_name_kanaが空' do
         @user.first_name_kana = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("フリガナ（名）を入力してください")
+        expect(@user.errors.full_messages).to include('フリガナ（名）を入力してください')
       end
       it 'first_name_kanaが半角' do
         @user.first_name_kana = 'ﾀﾛｳ'
@@ -117,7 +117,7 @@ RSpec.describe User, type: :model do
         @user.password = '1234abcd'
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("確認用パスワードがパスワードと一致していません")
+        expect(@user.errors.full_messages).to include('確認用パスワードがパスワードと一致していません')
       end
     end
   end

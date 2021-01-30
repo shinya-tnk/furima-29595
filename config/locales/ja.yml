@@ -65,7 +65,7 @@ ja:
           attributes:
             email:
               format: '%{attribute}%{message}'
-              blank: を正しく入力してください
+              blank: を入力してください
               invalid: を正しく入力してください
             password:
               format: '%{attribute}%{message}'
